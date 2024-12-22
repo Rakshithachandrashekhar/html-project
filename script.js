@@ -35,13 +35,13 @@ const quizData = [
   let score = 0;
   let answeredQuestions = [];
   
-  // DOM Elements
+  
   const questionElement = document.getElementById("question");
   const answersElement = document.getElementById("answers");
   const nextButton = document.getElementById("next-btn");
   const submitButton = document.getElementById("submit-btn");
   
-  // Load a question
+  
   function loadQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
     questionElement.textContent = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
@@ -59,7 +59,7 @@ const quizData = [
     submitButton.classList.add("hidden");
   }
   
-  // Check the answer
+  
   function checkAnswer(selectedIndex, button) {
     const correctIndex = quizData[currentQuestionIndex].correct;
   
@@ -86,7 +86,7 @@ const quizData = [
     }
   }
   
-  // Move to next question
+  
   nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < quizData.length) {
@@ -94,13 +94,13 @@ const quizData = [
     }
   });
   
-  // Show result page after submission
+  
   submitButton.addEventListener("click", () => {
     localStorage.setItem("quizScore", score);
     localStorage.setItem("quizTotal", quizData.length);
     window.location.href = "result.html";
   });
   
-  // Initialize quiz
+  
   loadQuestion();
   
